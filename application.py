@@ -1,12 +1,9 @@
-from flask import Flask, request, jsonify
-
+from flask import Flask
 app = Flask(__name__)
 
-@app.route("/flask/hello", methods=["POST"])
+@app.route('/hello')
 def hello():
-    data = request.json
-    name = data.get("name", "Guest")
-    return jsonify(message=f"Hello, {name}!")
+    return "Hello from Flask on Render!"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    app.run()
